@@ -5,6 +5,7 @@ import 'package:staapp/screens/song_request.dart';
 import 'package:staapp/screens/profile.dart';
 import 'package:staapp/theme/theme.dart';
 import 'package:staapp/theme/styles.dart';
+import 'package:staapp/screens/settings.dart';
 import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
 import 'dart:io';
 
@@ -58,6 +59,7 @@ class _MainNavigationState extends State<MainNavigation> {
       MenuPage(),
       SongPage(),
       ProfilePage(),
+      SettingsPage(),
     ];
     return Scaffold(
       body: _screens[_selectedIndex],
@@ -80,6 +82,10 @@ class _MainNavigationState extends State<MainNavigation> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Setting',
           ),
         ],
         selectedItemColor: Styles.primary,

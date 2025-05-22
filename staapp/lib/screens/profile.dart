@@ -112,7 +112,6 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget _buildProfilePicture() {
     return GestureDetector(
       onTap: () {
-        _showProfileOptionsDialog();
       },
       child: Container(
         decoration: BoxDecoration(
@@ -179,45 +178,6 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  
-
-  void _showProfileOptionsDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Change Profile Picture'),
-          content: SingleChildScrollView(
-            child: SizedBox( // Added SizedBox to constrain height
-              width: double.maxFinite, // Occupy full width
-              child: ListView.builder( // Replaced ListBody with ListView.builder
-                shrinkWrap: true, // Important for ListView in Dialog
-                itemCount: _profileOptions.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final image = _profileOptions[index];
-                  return InkWell( // Using InkWell for better tap feedback
-                    onTap: () {
-                      setState(() {
-                        _profileImage = image;
-                      });
-                      Navigator.pop(context); // Close the dialog
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: CircleAvatar(
-                        radius: 40,
-                        backgroundImage: AssetImage(image),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
 }
 
 
