@@ -74,33 +74,45 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(height: 24), // Reduced spacing
               SizedBox(
-                width: 180, // Adjusted button width
-                height: 45,  // Adjusted button height
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Styles.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25), // Slightly adjusted corner radius
-                    ),
-                    elevation: 3,
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => const MainNavigation(),
+                  width: 200, // Adjusted button width
+                  height: 45,  // Adjusted button height
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 250, 250, 250),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25), // Slightly adjusted corner radius
                       ),
-                    );
-                  },
-                  child: const Text(
-                    'Sign in with Google',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
+                      elevation: 3,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const MainNavigation(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/logos/Google.png',
+                          width: 22, // Adjusted logo size
+                          height: 22,
+                        ),
+                        const SizedBox(width: 3), // Space between logo and text
+                        const Text(
+                          'Sign in with Google',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 75, 19, 19),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ),
+
             ],
           ),
         ),
