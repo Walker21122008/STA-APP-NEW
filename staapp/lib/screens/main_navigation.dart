@@ -1,33 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:staapp/screens/login_page.dart';
 import 'package:staapp/screens/home_page.dart';
 import 'package:staapp/screens/menu_page.dart';
 import 'package:staapp/screens/song_request.dart';
 import 'package:staapp/screens/profile.dart';
 import 'package:staapp/screens/settings.dart';
-import 'package:staapp/theme/theme.dart';
 import 'package:staapp/theme/styles.dart';
-
-// Entry point
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'St. Augustine CHS App',
-      theme: lightThemePhone,
-      debugShowCheckedModeBanner: false,
-      home: const LoginPage(), // ✅ Start with LoginPage
-    );
-  }
-}
-
-
+import 'package:staapp/theme/theme.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -47,9 +25,9 @@ class _MainNavigationState extends State<MainNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    // Choose theme based on screen width
     final double width = MediaQuery.of(context).size.width;
     ThemeData theme;
+
     if (width == 1920) {
       theme = lightThemeTV;
     } else if (width < Styles.phoneWidth) {
